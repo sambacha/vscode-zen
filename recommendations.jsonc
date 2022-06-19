@@ -1,5 +1,26 @@
 {
   "recommendations": [
     "wix.glean" //  provides refactoring tools for your React codebase
+    "p42ai.refactor",
+    "yongsooim.alignargs",
+    "jeff-hykin.better-shellscript-syntax",
+    "jeff-hykin.better-js-syntax",
+    "shinruchan.vscode-barreler",
+    "yo1dog.cursor-align",
+    "dunstontc.dark-plus-syntax",
+    "huangbaoshan.comment-aligner",
+    "tamasfe.even-better-toml",
+    "me-dutour-mathieu.vscode-github-actions",
+    "github.copilot-nightly",
+    "editorconfig.editorconfig",
+    "hashicorp.hcl",
+    "tintinweb.vscode-inline-bookmarks",
+    "skellock.just",
+    "emilast.logfilehighlighter",
+    "dustypomerleau.rust-syntax",
+    "tintinweb.solidity-visual-auditor",
+    "peaceshi.syntax-highlight",
+    "zxh404.vscode-proto3",
+    "znck.grammarly"
   ]
 }
