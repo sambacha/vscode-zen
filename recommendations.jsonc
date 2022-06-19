@@ -1,0 +1,5 @@
+{
+  "recommendations": [
+    "wix.glean" //  provides refactoring tools for your React codebase
+  ]
+}
