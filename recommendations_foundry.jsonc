@@ -1,0 +1,18 @@
+{
+    "recommendations": [
+        "jzmstrjp.color-the-tag-name",
+        "b3hr4d.colorful-darkplus",
+        "dotenv.dotenv-vscode",
+        "davidlday.languagetool-linter",
+        "matklad.pale-fire",
+        "streetsidesoftware.code-spell-checker",
+        "p42ai.refactor",
+        "valentjn.vscode-ltex",
+        "cardinal90.multi-cursor-case-preserve",
+        "jnoortheen.nix-ide",
+        "zhuangtongfa.material-theme",
+        "bradlc.vscode-tailwindcss",
+        "adamvoss.vscode-languagetool",
+        "ryanluker.vscode-coverage-gutters" // coverage
+    ]
+}
