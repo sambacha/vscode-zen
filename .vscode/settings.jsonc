@@ -2,12 +2,28 @@
   "telemetry.enableTelemetry": false,
   "telemetry.telemetryLevel": "off",
   "telemetry.enableCrashReporter": false,
+  "solidity.telemetry": false,
   "terminal.enableAppInsights": false,
   "workbench.editor.historyBasedLanguageDetection": true,
   "terminal.integrated.shellIntegration.enabled": true,
   "extensions.autoUpdate": "onlyEnabledExtensions",
   "editor.fontFamily": "PragmataPro",
   "files.eol": "\n",
+  "betterAlign.surroundSpace": {
+    "colon": [
+      0,
+      1
+    ],
+    "assignment": [
+      -1,
+      -1
+    ],
+    "arrow": [
+      1,
+      1
+    ],
+    "comment": 2
+  },
   "editor.cursorStyle": "block",
   "editor.insertSpaces": true,
   "editor.detectIndentation": true,
@@ -43,26 +59,57 @@
   // GitHub
   "remoteHub.autoFetch.interval": 1500,
   "remoteHub.experimental.useNewCommitApi": false,
-    // Enable or disable Copilot for specified [languages](https://code.visualstudio.com/docs/languages/identifiers)
-  "github.copilot.enable":{
+  // Enable or disable Copilot for specified [languages](https://code.visualstudio.com/docs/languages/identifiers)
+  "github.copilot.enable": {
     "*": true,
+    "*.js*": true,
+    "*.ts": true,
+    "*.mjs*": true,
+    "*.cjs": true,
+    "*.jsx": true,
+    "*.tsx": true,
+    "*.sol": true,
+    "*.nix": true,
+    "*.sh": true,
+    "*.go": true,
     "*.env": false,
-     "*.key": false,
-     "?*env": false,
-     "env_*": false,
-     "?*key": false,
-      "?*ssh": false,
-      "id_*": false,
-      "yaml": true,
-      "plaintext": false,
-      "markdown": true
-    },
+    "*.key": false,
+    "?*env": false,
+    "env_*": false,
+    "?*key": false,
+    "?*ssh": false,
+    "id_*": false,
+    "yaml": true,
+    "plaintext": false,
+    "markdown": true
+  },
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html"
+  },
+  "files.associations": {
+    "*.css": "tailwindcss",
+    ".dapprc": "shellscript",
+    ".gas-snapshot": "julia",
+    "*.hbs": "handlebars"
+  },
   // Show inline suggestions
   "github.copilot.inlineSuggest.enable": true,
   "github.copilot.advanced": {
-    "debug.githubCTSIntegrationEnabled": false,
+    "indentationMode": {
+      "python": false,
+      "javascript": false,
+      "javascriptreact": false,
+      "jsx": false,
+      "typescript": false,
+      "typescriptreact": false,
+      "go": false,
+      "ruby": false,
+      "*": true
+    },
+    "inlineSuggestCount": 3,
+    "debug.githubCTSIntegrationEnabled": true,
     "debug.showScores": true,
-    "top_p": 3
+//    "top_p": 1
   },
   "terminal.external.osxExec": "iTerm.app",
   "terminal.explorerKind": "external",
@@ -71,7 +118,6 @@
   // Workbench.
   "workbench.activityBar.visible": true,
   "workbench.colorCustomizations": {
-  
     "editorBracketHighlight.foreground1": "#ea4aaa",
     "editorBracketHighlight.foreground2": "#28a745",
     "editorBracketHighlight.foreground3": "#6f42c1",
@@ -93,7 +139,9 @@
       "editorBracketHighlight.foreground4": "#EBCB8B",
       "editorBracketHighlight.foreground5": "#D08770",
       "editorBracketHighlight.foreground6": "#B48EAD"
-    }
+    },
+    "editor.lineHighlightBackground": "#1073cf2d",
+    "editor.lineHighlightBorder": "#9fced11f"
   },
   "workbench.editor.closeOnFileDelete": true,
   "workbench.editor.decorations.badges": true,
@@ -110,12 +158,7 @@
   "workbench.tree.indent": 16,
   "gitlens.defaultDateLocale": "system",
   "bashIde.highlightParsingErrors": true,
-  "files.associations": {
-    ".dapprc": "shellscript",
-    ".gas-snapshot": "julia",
-    "*.hbs": "handlebars"
-  },
-   // colorizer2 has better coverage than the inbuilt version
+  // colorizer2 has better coverage than the inbuilt version
   "bracket-pair-colorizer-2.depreciation-notice": false,
   "workbench.startupEditor": "none",
   "grammarly.config.documentDomain": "academic",
@@ -129,8 +172,7 @@
     "**/*.adoc",
     "**/*.tex"
   ],
-  "grammarly.selectors": [
-  ],
+  "grammarly.selectors": [],
   "json.maxItemsComputed": 10000,
   "explorer.confirmDelete": false,
   "debug.showInStatusBar": "always",
@@ -140,7 +182,13 @@
   "spellright.addToSystemDictionary": true,
   "spellright.notificationClass": "warning",
   "spellright.statusBarIndicator": true,
-  "spellright.ignoreFiles": [ "**/.gitignore", "**/.spellignore", "**/dist", "**/build", "**/.*" ],
+  "spellright.ignoreFiles": [
+    "**/.gitignore",
+    "**/.spellignore",
+    "**/dist",
+    "**/build",
+    "**/.*"
+  ],
   "spellright.latexSpellParameters": [
     "author",
     "title",
@@ -162,280 +210,276 @@
     "href",
     "hyperref",
     "begin\\{frame\\}"
-],
-      // Typescript
-      "typescript.suggest.completeFunctionCalls": true,
-      "typescript.tsserver.experimental.enableProjectDiagnostics": false,
+  ],
+  // Typescript
+  "typescript.suggest.completeFunctionCalls": true,
+  "typescript.tsserver.experimental.enableProjectDiagnostics": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
-"[typescript]": {
-
-"outline.showArrays": true,
-"outline.showFunctions": true,
-"breadcrumbs.showTypeParameters": true,
-"editor.gotoLocation.alternativeTypeDefinitionCommand": "editor.action.peekTypeDefinition",
-"outline.showInterfaces": true
-},
-"explorer.confirmDragAndDrop": false,
-"gitlens.mode.active": "review",
-"editor.renderWhitespace": "boundary",
-"editor.bracketPairs": "active",
-"editor.bracketPairColorization.enabled": true,
-"editor.bracketPairColorization.independentColorPoolPerBracketType": true,
-"bracket-pair-colorizer-2.forceUniqueOpeningColor": true,
-"bracket-pair-colorizer-2.highlightActiveScope": true,
-"bracket-pair-colorizer-2.showBracketsInGutter": true,
-"bracket-pair-colorizer-2.showBracketsInRuler": true,
-"bracket-pair-colorizer-2.forceIterationColorCycle": true,
-"editor.foldingMaximumRegions": 15000,
-"solidity-va.test.defaultUnittestTemplate": "hardhat",
-"solidity-va.preview.markdown": true,
-"solidity-va.cockpit.view.topLevelContracts.listStyle": "tree",
-"javascript.updateImportsOnFileMove.enabled": "always",
-"beautify.ignore": "",
-"emmet.triggerExpansionOnTab": true,
-"emmet.showSuggestionsAsSnippets": true,
-"editor.snippetSuggestions": "top",
-"[markdown]": {
-  "editor.defaultFormatter": "vscode.markdown-language-features"
-},
-"bracket-pair-colorizer-2.activeScopeCSS": [
-  "borderStyle : solid",
-  "borderWidth : 1px",
-  "borderColor : {color}",
-  "opacity: 0.5"
-],
-  "editor.cursorSmoothCaretAnimation" : true,
+  "[typescript]": {
+    "outline.showArrays": true,
+    "outline.showFunctions": true,
+    "breadcrumbs.showTypeParameters": true,
+    "editor.gotoLocation.alternativeTypeDefinitionCommand": "editor.action.peekTypeDefinition",
+    "outline.showInterfaces": true
+  },
+  "explorer.confirmDragAndDrop": false,
+  "editor.renderWhitespace": "boundary",
+  "editor.bracketPairs": "active",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "bracket-pair-colorizer-2.forceUniqueOpeningColor": true,
+  "bracket-pair-colorizer-2.highlightActiveScope": true,
+  "bracket-pair-colorizer-2.showBracketsInGutter": true,
+  "bracket-pair-colorizer-2.showBracketsInRuler": true,
+  "bracket-pair-colorizer-2.forceIterationColorCycle": true,
+  "editor.foldingMaximumRegions": 15000,
+  "solidity-va.test.defaultUnittestTemplate": "hardhat",
+  "solidity-va.preview.markdown": true,
+  "solidity-va.cockpit.view.topLevelContracts.listStyle": "tree",
+  "beautify.ignore": "",
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.showSuggestionsAsSnippets": true,
+  "editor.snippetSuggestions": "top",
+  "[markdown]": {
+    "editor.defaultFormatter": "vscode.markdown-language-features"
+  },
+  "bracket-pair-colorizer-2.activeScopeCSS": [
+    "borderStyle : solid",
+    "borderWidth : 1px",
+    "borderColor : {color}",
+    "opacity: 0.5"
+  ],
+  "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorBlinking": "expand",
   "editor.overviewRulerBorder": false,
   "editor.showFoldingControls": "mouseover",
- // "editor.renderIndentGuides": false,
+  // "editor.renderIndentGuides": false,
   "editor.renderLineHighlight": "none",
   //  "editor.fontFamily": "Input Mono, SFMono-UltraLight, SourceCodePro-Light, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontWeight": "200",
-  "window.titleBarStyle":"custom",
+  "window.titleBarStyle": "custom",
   "editor.quickSuggestionsDelay": 0,
   "prettier.useEditorConfig": true,
   "prettier.requireConfig": true,
-    // List of characters the extension should track
-    "gremlins.characters": {
-      "2013": {
-        "description": "en dash",
-        "level": "warning"
-      },
-      "2018": {
-        "description": "left single quotation mark",
-        "level": "warning"
-      },
-      "2019": {
-        "description": "right single quotation mark",
-        "level": "warning"
-      },
-      "2029": {
-        "zeroWidth": true,
-        "description": "paragraph separator",
-        "level": "error"
-      },
-      "0003": {
-        "description": "end of text",
-        "level": "warning"
-      },
-      "000b": {
-        "description": "line tabulation",
-        "level": "warning"
-      },
-      "00a0": {
-        "description": "non breaking space",
-        "level": "info"
-      },
-      "00ad": {
-        "description": "soft hyphen",
-        "level": "info"
-      },
-      "200b": {
-        "zeroWidth": true,
-        "description": "zero width space",
-        "level": "error"
-      },
-      "200c": {
-        "zeroWidth": true,
-        "description": "zero width non-joiner",
-        "level": "warning"
-      },
-      "200e": {
-        "zeroWidth": true,
-        "description": "left-to-right mark",
-        "level": "error"
-      },
-      "201c": {
-        "description": "left double quotation mark",
-        "level": "warning"
-      },
-      "201d": {
-        "description": "right double quotation mark",
-        "level": "warning"
-      },
-      "202c": {
-        "zeroWidth": true,
-        "description": "pop directional formatting",
-        "level": "error"
-      },
-      "202d": {
-        "zeroWidth": true,
-        "description": "left-to-right override",
-        "level": "error"
-      },
-      "202e": {
-        "zeroWidth": true,
-        "description": "right-to-left override",
-        "level": "error"
-      },
-      "fffc": {
-        "zeroWidth": true,
-        "description": "object replacement character",
-        "level": "error"
-      }
+  // List of characters the extension should track
+  "gremlins.characters": {
+    "2013": {
+      "description": "en dash",
+      "level": "warning"
     },
+    "2018": {
+      "description": "left single quotation mark",
+      "level": "warning"
+    },
+    "2019": {
+      "description": "right single quotation mark",
+      "level": "warning"
+    },
+    "2029": {
+      "zeroWidth": true,
+      "description": "paragraph separator",
+      "level": "error"
+    },
+    "0003": {
+      "description": "end of text",
+      "level": "warning"
+    },
+    "000b": {
+      "description": "line tabulation",
+      "level": "warning"
+    },
+    "00a0": {
+      "description": "non breaking space",
+      "level": "info"
+    },
+    "00ad": {
+      "description": "soft hyphen",
+      "level": "info"
+    },
+    "200b": {
+      "zeroWidth": true,
+      "description": "zero width space",
+      "level": "error"
+    },
+    "200c": {
+      "zeroWidth": true,
+      "description": "zero width non-joiner",
+      "level": "warning"
+    },
+    "200e": {
+      "zeroWidth": true,
+      "description": "left-to-right mark",
+      "level": "error"
+    },
+    "201c": {
+      "description": "left double quotation mark",
+      "level": "warning"
+    },
+    "201d": {
+      "description": "right double quotation mark",
+      "level": "warning"
+    },
+    "202c": {
+      "zeroWidth": true,
+      "description": "pop directional formatting",
+      "level": "error"
+    },
+    "202d": {
+      "zeroWidth": true,
+      "description": "left-to-right override",
+      "level": "error"
+    },
+    "202e": {
+      "zeroWidth": true,
+      "description": "right-to-left override",
+      "level": "error"
+    },
+    "fffc": {
+      "zeroWidth": true,
+      "description": "object replacement character",
+      "level": "error"
+    }
+  },
   // Color for **error** level
-    "gremlins.color_error": "rgba(169, 68, 66, .75)",
+  "gremlins.color_error": "rgba(169, 68, 66, .75)",
   // Color for **info** level
-    "gremlins.color_info": "rgba(60, 118, 61, .75)",
+  "gremlins.color_info": "rgba(60, 118, 61, .75)",
   // Color for **warning** level
-    "gremlins.color_warning": "rgba(138, 109, 59, .75)",
+  "gremlins.color_warning": "rgba(138, 109, 59, .75)",
   // gutter icon size
-    "gremlins.gutterIconSize": "75%",
-    // Show gremlins in the problem pane
-    "gremlins.showInProblemPane": false,
-    // Use customized Math expression block delimiters.
-    "markdown-preview-enhanced.mathBlockDelimiters": [
-      [
-        "$$",
-        "$$"
-      ],
-      [
-        "\\[",
-        "\\]"
-      ]
+  "gremlins.gutterIconSize": "75%",
+  // Show gremlins in the problem pane
+  "gremlins.showInProblemPane": false,
+  // Use customized Math expression block delimiters.
+  "markdown-preview-enhanced.mathBlockDelimiters": [
+    [
+      "$$",
+      "$$"
     ],
+    [
+      "\\[",
+      "\\]"
+    ]
+  ],
   // Use customized Math expression inline delimiters.
-    "markdown-preview-enhanced.mathInlineDelimiters": [
-      [
-        "$",
-        "$"
-      ],
-      [
-        "\\(",
-        "\\)"
-      ]
+  "markdown-preview-enhanced.mathInlineDelimiters": [
+    [
+      "$",
+      "$"
     ],
+    [
+      "\\(",
+      "\\)"
+    ]
+  ],
   // Choose the Math expression rendering method option for GFM markdown export (Save as Markdown).
-    "markdown-preview-enhanced.mathRenderingOnlineService": "https://latex.codecogs.com/gif.latex",
+  "markdown-preview-enhanced.mathRenderingOnlineService": "https://latex.codecogs.com/gif.latex",
   // Choose the Math expression rendering method here. You can also disable math rendering if you want by choosing 'None'.
-    "markdown-preview-enhanced.mathRenderingOption": "KaTeX",
+  "markdown-preview-enhanced.mathRenderingOption": "KaTeX",
   // Mermaid theme, you can choose one from ["mermaid.css", "mermaid.dark.css", "mermaid.forest.css"]
-    "markdown-preview-enhanced.mermaidTheme": "default",
+  "markdown-preview-enhanced.mermaidTheme": "default",
   // Args passed to pandoc command e.g. ["--smart", "--filter=/bin/exe"] Please use long argument names.
-    "markdown-preview-enhanced.pandocArguments": [],
+  "markdown-preview-enhanced.pandocArguments": [],
   // The pandoc markdown flavor you want
-    "markdown-preview-enhanced.pandocMarkdownFlavor": "markdown-raw_tex+tex_math_single_backslash",
-    "vscode-json-editor.theme": "dark",
-    "[json]": {
-      "editor.defaultFormatter": "vscode.json-language-features"
+  "markdown-preview-enhanced.pandocMarkdownFlavor": "markdown-raw_tex+tex_math_single_backslash",
+  "vscode-json-editor.theme": "dark",
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "generateJSONSchema.additionalProperties": true,
+  "generateJSONSchema.jsDoc": "extended",
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "alignment.chars": {
+    ":": {
+      "spaceBefore": 0,
+      "spaceAfter": 1
     },
-
-    "generateJSONSchema.additionalProperties": true,
-    "generateJSONSchema.jsDoc": "extended",
-    "[css]": {
-      "editor.defaultFormatter": "vscode.css-language-features"
+    "::": {
+      "spaceBefore": 0,
+      "spaceAfter": 0
     },
-    "alignment.chars": {
-      ":": {
-        "spaceBefore": 0,
-        "spaceAfter": 1
-      },
-      "::": {
-        "spaceBefore": 0,
-        "spaceAfter": 0
-      },
-      "=": {
-        "spaceBefore": 1,
-        "spaceAfter": 1
-      },
-      "===": {
-        "spaceBefore": 1,
-        "spaceAfter": 1
-      },
-      "==": {
-        "spaceBefore": 1,
-        "spaceAfter": 1
-      },
-      "=>": {
-        "spaceBefore": 1,
-        "spaceAfter": 1
-      },
-      "+=": {
-        "spaceBefore": 1,
-        "spaceAfter": 1
-      },
-      "-=": {
-        "spaceBefore": 1,
-        "spaceAfter": 1
-      },
-      "*=": {
-        "spaceBefore": 1,
-        "spaceAfter": 1
-      },
-      "/=": {
-        "spaceBefore": 1,
-        "spaceAfter": 1
-      }
+    "=": {
+      "spaceBefore": 1,
+      "spaceAfter": 1
     },
-    "alignment.surroundSpace": {
-      "colon": [
-        0,
-        1
-      ],
-      "assignment": [
-        1,
-        1
-      ],
-      "arrow": [
-        1,
-        1
-      ],
-      "comment": 2
+    "===": {
+      "spaceBefore": 1,
+      "spaceAfter": 1
     },
-    "latex-workshop.latex.tools": [
-      {
-          "name": "latexmk",
-          "command": "latexmk",
-          "args": [
-              "--shell-escape",
-              "-synctex=1",
-              "-interaction=nonstopmode",
-              "-file-line-error",
-              "-pdf",
-              "-outdir=%OUTDIR%",
-              "%DOC%"
-          ]
-      },
-      {
-          "name": "pdflatex",
-          "command": "pdflatex",
-          "args": [
-              "--shell-escape",
-              "-synctex=1",
-              "-interaction=nonstopmode",
-              "-file-line-error",
-              "%DOC%"
-          ]
-      },
-      {
-          "name": "bibtex",
-          "command": "bibtex",
-          "args": [
-              "%DOCFILE%"
-          ]
-      }
+    "==": {
+      "spaceBefore": 1,
+      "spaceAfter": 1
+    },
+    "=>": {
+      "spaceBefore": 1,
+      "spaceAfter": 1
+    },
+    "+=": {
+      "spaceBefore": 1,
+      "spaceAfter": 1
+    },
+    "-=": {
+      "spaceBefore": 1,
+      "spaceAfter": 1
+    },
+    "*=": {
+      "spaceBefore": 1,
+      "spaceAfter": 1
+    },
+    "/=": {
+      "spaceBefore": 1,
+      "spaceAfter": 1
+    }
+  },
+  "alignment.surroundSpace": {
+    "colon": [
+      0,
+      1
+    ],
+    "assignment": [
+      1,
+      1
+    ],
+    "arrow": [
+      1,
+      1
+    ],
+    "comment": 2
+  },
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk",
+      "command": "latexmk",
+      "args": [
+        "--shell-escape",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-pdf",
+        "-outdir=%OUTDIR%",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "pdflatex",
+      "command": "pdflatex",
+      "args": [
+        "--shell-escape",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ]
+    },
+    {
+      "name": "bibtex",
+      "command": "bibtex",
+      "args": [
+        "%DOCFILE%"
+      ]
+    }
   ],
   "docthis.includeDescriptionTag": true,
   "docthis.returnsTag": true,
@@ -516,6 +560,7 @@
     "dpack",
     "dpacks",
     "ecsign",
+    "editorjs",
     "eips",
     "Encodable",
     "enode",
@@ -607,9 +652,11 @@
     "nanoeth",
     "NETHERMIND",
     "Networkish",
+    "nextest",
     "Nextjs",
     "nodenext",
     "nomiclabs",
+    "normies",
     "norpc",
     "Numberish",
     "objectname",
@@ -708,6 +755,7 @@
     "walletconnect",
     "walletlink",
     "widont",
+    "wireit",
     "WNATIVE",
     "XENF",
     "xffn",
@@ -728,5 +776,166 @@
     "FIG_NEW_SESSION": "1"
   },
   "editor.accessibilitySupport": "off",
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "Syntax Material Dark Level 1 (beta)",
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "keyword.other.dotenv",
+        "settings": {
+          "foreground": "#FF000000"
+        }
+      }
+    ]
+  },
+  "workbench.editorAssociations": {
+    "*.pdf": "default"
+  },
+  "docify.expressiveComment": true,
+  "docify.intelligentDetection": true,
+  "docify.sidePanelReviewMode": true,
+  "docify.style": "JsDoc",
+  "window.zoomLevel": 1,
+  "[shellscript]": {
+  "breadcrumbs.showArrays": true,
+  },
+    "highlight.regexes": {
+      "((?:<!-- *)?(?:#|// @|//|./\\*+|<!--|--|\\* @|{!|{{!--|{{!) *TODO(?:\\s*\\([^)]+\\))?:?)((?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|{!|{{!--|{{!))|(?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|{!|{{!--|{{!))|(?: +[^@\\n]+)?))": {
+        "filterFileRegex": ".*(?<!CHANGELOG.md)$",
+        "decorations": [
+          {
+            "overviewRulerColor": "#ffcc00",
+            "backgroundColor": "#ffcc00",
+            "color": "#1f1f1f",
+            "fontWeight": "bold"
+          },
+          {
+            "backgroundColor": "#ffcc00",
+            "color": "#1f1f1f"
+          }
+        ]
+      },
+      "((?:<!-- *)?(?:#|// @|//|./\\*+|<!--|--|\\* @|{!|{{!--|{{!) *(?:FIXME|FIX|BUG|UGLY|DEBUG|HACK)(?:\\s*\\([^)]+\\))?:?)((?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|{!|{{!--|{{!))|(?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|{!|{{!--|{{!))|(?: +[^@\\n]+)?))": {
+        "filterFileRegex": ".*(?<!CHANGELOG.md)$",
+        "decorations": [
+          {
+            "overviewRulerColor": "#cc0000",
+            "backgroundColor": "#cc0000",
+            "color": "#1f1f1f",
+            "fontWeight": "bold"
+          },
+          {
+            "backgroundColor": "#cc0000",
+            "color": "#1f1f1f"
+          }
+        ]
+      },
+      "((?:<!-- *)?(?:#|// @|//|./\\*+|<!--|--|\\* @|{!|{{!--|{{!) *(?:REVIEW|OPTIMIZE|TSC)(?:\\s*\\([^)]+\\))?:?)((?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|{!|{{!--|{{!))|(?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|{!|{{!--|{{!))|(?: +[^@\\n]+)?))": {
+        "filterFileRegex": ".*(?<!CHANGELOG.md)$",
+        "decorations": [
+          {
+            "overviewRulerColor": "#00ccff",
+            "backgroundColor": "#00ccff",
+            "color": "#1f1f1f",
+            "fontWeight": "bold"
+          },
+          {
+            "backgroundColor": "#00ccff",
+            "color": "#1f1f1f"
+          }
+        ]
+      },
+      "((?:<!-- *)?(?:#|// @|//|./\\*+|<!--|--|\\* @|{!|{{!--|{{!) *(?:IDEA)(?:\\s*\\([^)]+\\))?:?)((?!\\w)(?: *-->| *\\*/| *!}| *--}}| *}}|(?= *(?:[^:]//|/\\*+|<!--|@|--|{!|{{!--|{{!))|(?: +[^\\n@]*?)(?= *(?:[^:]//|/\\*+|<!--|@|--(?!>)|{!|{{!--|{{!))|(?: +[^@\\n]+)?))": {
+        "filterFileRegex": ".*(?<!CHANGELOG.md)$",
+        "decorations": [
+          {
+            "overviewRulerColor": "#cc00cc",
+            "backgroundColor": "#cc00cc",
+            "color": "#1f1f1f",
+            "fontWeight": "bold"
+          },
+          {
+            "backgroundColor": "#cc00cc",
+            "color": "#1f1f1f"
+          }
+        ]
+      }
+    },
+    "bashIde.explainshellEndpoint": "http://localhost:5000",
+    "editor.semanticTokenColorCustomizations": {
+      "enabled": true, // enable for all themes
+      "[Default Dark+]": {
+          "enabled": true // enable for a particular theme
+      },
+    "syntax.highlightLanguages": [
+      "bash",
+      "c",
+      "cpp",
+      "python",
+      "typescript",
+      "typescriptreact",
+      "javascript",
+      "go",
+      "rust",
+      "php",
+      "ruby",
+      "shellscript",
+      "ocaml",
+      "lua"
+    ]
+},
+"settingsSync.ignoredExtensions": [
+  "juanblanco.solidity"
+],
+"blockman.n01LineHeight": 0,
+"editor.guides.indentation": false,
+"editor.guides.bracketPairs": false,
+"solidity-language-server.trace.server.verbosity": "message",
+"syntax.highlightTerms": [
+  "type",
+  "scope",
+  "function",
+  "variable",
+  "number",
+  "string",
+  "comment",
+  "constant",
+  "directive",
+  "control",
+  "operator",
+  "modifier",
+  "punctuation"
+],
+"coverage-gutters.coverageReportFileName": ".coverage/**/index.html",
+"bashIde.logLevel": "debug",
+"syntax.debugHover": true,
+"syntax.highlightLanguages": [
+  "c",
+  "cpp",
+  "python",
+  "typescript",
+  "typescriptreact",
+  "javascript",
+  "go",
+  "rust",
+  "php",
+  "ruby",
+  "shellscript",
+  "ocaml",
+  "lua"
+],
+"github.copilot-labs.showTestGenerationLenses": true,
+"github.copilot-labs.showBrushesLenses": true,
+"github.copilot-labs.advanced": {
+
+},
+"githubNotificationsBell.refreshInterval": 300, // Amount of seconds to wait before each refresh
+  // OAUTH TOKEN BELOW
+  "githubNotificationsBell.oauthToken": "", // OAuth token used for requesting the notifications
+  "githubNotificationsBell.alignment": "right", // Bell's position in the statusbar (left/right)
+  "githubNotificationsBell.icon": "mark-github", // The icon to use in the statusbar
+  "githubNotificationsBell.color": "", // Bell's color when there are some notifications
+  "githubNotificationsBell.hideIfNone": true, // Hide the bell if there are no notifications
+  "githubNotificationsBell.showNumberOfNotifications": true, // Show the number of notifications alongside the bell icon
+  "githubNotificationsBell.domain": "github.com" // The Github domain to query against. Github Enterprise may use a different domain
 }
