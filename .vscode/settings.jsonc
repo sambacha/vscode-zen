@@ -7,9 +7,17 @@
   "workbench.editor.historyBasedLanguageDetection": true,
   "terminal.integrated.shellIntegration.enabled": true,
   "extensions.autoUpdate": "onlyEnabledExtensions",
-  // strip most environment variables from the terminal's environment, except for some important ones
+  // @dev strip most environment variables from the terminal's environment, except for some important ones
   // {@link https://code.visualstudio.com/docs/terminal/profiles#_why-are-there-duplicate-paths-in-the-terminals-path-environment-variable-andor-why-are-they-reversed-on-macos}
   "terminal.integrated.inheritEnv": false,
+   // @dev Map file extensions to an existing language either globally or per workspace.
+  // {@see https://code.visualstudio.com/docs/languages/overview#_can-i-map-additional-file-extensions-to-a-language}
+  "files.associations": {
+    ".gas-snapshot": "julia",
+    "*.sol": "solidity",
+    "*.t.sol": "solidity",
+    "*.slib": "solidity"
+  },
   "editor.fontFamily": "PragmataPro",
   "files.eol": "\n",
   "betterAlign.surroundSpace": {
