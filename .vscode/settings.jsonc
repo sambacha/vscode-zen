@@ -1,5 +1,10 @@
 {
   // Controls the window title based on the active editor.
+   // {@link https://code.visualstudio.com/updates/v1_78#_diff-algorithm-improvements}
+  "diffEditor.diffAlgorithm": "advanced",
+ "[python]": {
+        "editor.formatOnType": true,
+    },
   "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}${appName}",
   "telemetry.enableTelemetry": false,
   "telemetry.telemetryLevel": "off",
