@@ -1,17 +1,20 @@
 {
   // Controls the window title based on the active editor.
-   // {@link https://code.visualstudio.com/updates/v1_78#_diff-algorithm-improvements}
-  "diffEditor.diffAlgorithm": "advanced",
- "[python]": {
-        "editor.formatOnType": true,
-    },
   "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}${appName}",
+  //!
+  // [!IMPORTANT] Telemetry Settings
+  // 
+  // All Telemetry configurations are organized at the top most of this configuration,
+  //   regardless of where that extenstions other configurations are located within this file
+  //!
   "telemetry.enableTelemetry": false,
   "telemetry.telemetryLevel": "off",
   "telemetry.enableCrashReporter": false,
   "solidity.telemetry": false,
-  "terminal.enableAppInsights": false,
+  "redhat.telemetry.enabled": false,
   "workbench.editor.historyBasedLanguageDetection": true,
+  // @extenstion terminal
+  // @dev Terminal Configuration
   "terminal.integrated.shellIntegration.enabled": true,
   "extensions.autoUpdate": "onlyEnabledExtensions",
   // @dev strip most environment variables from the terminal's environment, except for some important ones
@@ -19,6 +22,18 @@
   "terminal.integrated.inheritEnv": false,
   // @dev Map file extensions to an existing language either globally or per workspace.
   // {@see https://code.visualstudio.com/docs/languages/overview#_can-i-map-additional-file-extensions-to-a-language}
+  "terminal.integrated.shellArgs.osx": [
+    "--noprofile",
+    "--norc"
+  ],
+//  "terminal.integrated.env.osx": {
+//    "PATH": "/fake/path:${env:PATH}"
+//  },
+// @extenstion languageToolLinter
+//  "languageToolLinter.external.username": "sam@manifoldfinance.com",
+//  "languageToolLinter.external.apiKey": "",
+  "languageToolLinter.languageTool.motherTongue": "en-US",
+  "terminal.enableAppInsights": false,
   "files.associations": {
     ".gas-snapshot": "julia",
     "*.sol": "solidity",
@@ -66,11 +81,11 @@
     "*.mts": "${capture}.typegen.ts, ${capture}.typegen.ts",
     "*.cts": "${capture}.typegen.ts, ${capture}.typegen.ts",
   },
+  //! @extenstion DiffEditor
   // Controls whether the editor shows CodeLens.
   "editor.codeLens": true,
   // Controls whether the editor shows CodeLens.
   "diffEditor.codeLens": true,
-
   //  - legacy: Uses the legacy diffing algorithm.
   //  - advanced: Uses the advanced diffing algorithm.
   "diffEditor.diffAlgorithm": "advanced",
@@ -78,10 +93,10 @@
   "editor.codeLensFontFamily": "",
   // When enabled, the diff editor ignores changes in leading or trailing whitespace.
   "diffEditor.ignoreTrimWhitespace": true,
-
+  // {@link https://code.visualstudio.com/updates/v1_78#_diff-algorithm-improvements}
+  "diffEditor.diffAlgorithm": "advanced",
   // Timeout in milliseconds after which diff computation is cancelled. Use 0 for no timeout.
   "diffEditor.maxComputationTime": 8000,
-
   // Controls whether the diff editor shows +/- indicators for added/removed changes.
   "diffEditor.renderIndicators": true,
   // Controls the font size in pixels for CodeLens. When set to 0, 90% of `editor.fontSize` is used.
@@ -244,56 +259,13 @@
   // colorizer2 has better coverage than the inbuilt version
   "bracket-pair-colorizer-2.depreciation-notice": false,
   "workbench.startupEditor": "none",
-  "grammarly.config.documentDomain": "academic",
-  "grammarly.config.suggestions.ConjunctionAtStartOfSentence": true,
-  "grammarly.config.suggestions.InformalPronounsAcademic": true,
-  "grammarly.files.include": [
-    "**/readme.md",
-    "**/README.md",
-    "**/*.txt",
-    "**.md",
-    "**/*.adoc",
-    "**/*.tex",
-  ],
-  "grammarly.selectors": [],
+   "[python]": {
+        "editor.formatOnType": true,
+    },
   "json.maxItemsComputed": 10000,
   "explorer.confirmDelete": false,
   "debug.showInStatusBar": "always",
-  "redhat.telemetry.enabled": false,
   "hardhat-language-server.trace.server.verbosity": "verbose",
-  "spellright.configurationScope": "user",
-  "spellright.addToSystemDictionary": true,
-  "spellright.notificationClass": "warning",
-  "spellright.statusBarIndicator": true,
-  "spellright.ignoreFiles": [
-    "**/.gitignore",
-    "**/.spellignore",
-    "**/dist",
-    "**/build",
-    "**/.*",
-  ],
-  "spellright.latexSpellParameters": [
-    "author",
-    "title",
-    "date",
-    "chapter",
-    "section\\*?",
-    "subsection\\*?",
-    "subsubsection\\*?",
-    "part",
-    "paragraph",
-    "subparagraph",
-    "text(rm|sf|tt|md|bf|up|it|sl|sc|normal)",
-    "underline",
-    "emph",
-    "item",
-    "footnote(text)?",
-    "caption(of)?",
-    "multicolumn",
-    "href",
-    "hyperref",
-    "begin\\{frame\\}",
-  ],
   // Configure settings to be overridden for the search-result language.
   "[search-result]": {
     "editor.lineNumbers": "off",
@@ -534,37 +506,6 @@
     arrow: [1, 1],
     comment: 2,
   },
-  "latex-workshop.latex.tools": [
-    {
-      name: "latexmk",
-      command: "latexmk",
-      args: [
-        "--shell-escape",
-        "-synctex=1",
-        "-interaction=nonstopmode",
-        "-file-line-error",
-        "-pdf",
-        "-outdir=%OUTDIR%",
-        "%DOC%",
-      ],
-    },
-    {
-      name: "pdflatex",
-      command: "pdflatex",
-      args: [
-        "--shell-escape",
-        "-synctex=1",
-        "-interaction=nonstopmode",
-        "-file-line-error",
-        "%DOC%",
-      ],
-    },
-    {
-      name: "bibtex",
-      command: "bibtex",
-      args: ["%DOCFILE%"],
-    },
-  ],
   "docthis.includeDescriptionTag": true,
   "docthis.returnsTag": true,
   "docthis.inferTypesFromNames": true,
@@ -858,11 +799,7 @@
   "javascript.referencesCodeLens.showOnAllFunctions": true,
   // Enable/disable auto import suggestions.
   "javascript.suggest.autoImports": true,
-  "javascript.validate.enable": false,
-  "svelte.enable-ts-plugin": true,
-  "terminal.integrated.env.osx": {
-    FIG_NEW_SESSION: "1",
-  },
+  "javascript.validate.enable": true,
   "editor.accessibilitySupport": "off",
   "workbench.colorTheme": "Syntax Material Dark Level 1 (beta)",
   "security.workspace.trust.untrustedFiles": "open",
@@ -887,7 +824,6 @@
   "[shellscript]": {
     "breadcrumbs.showArrays": true,
   },
-
   "bashIde.explainshellEndpoint": "http://localhost:5000",
   "editor.semanticTokenColorCustomizations": {
     enabled: true, // enable for all themes
@@ -963,7 +899,6 @@
     //  - committed: Use the committed date
     //  - authored: Use the authored date
     "git.timeline.date": "committed",
-
     // Controls whether to show the commit author in the Timeline view.
     "git.timeline.showAuthor": true,
   },
