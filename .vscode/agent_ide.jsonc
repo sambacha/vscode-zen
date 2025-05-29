@@ -1,0 +1,620 @@
+{
+    // Controls the window title based on the active editor.
+    "window.title": "${dirty}${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}${appName}",
+    //!
+    // [!IMPORTANT] Telemetry Settings
+    // 
+    // All Telemetry configurations are organized at the top most of this configuration,
+    //   regardless of where that extenstions other configurations are located within this file
+    //!
+    "telemetry.enableTelemetry": false,
+    "telemetry.telemetryLevel": "off",
+    "telemetry.enableCrashReporter": false,
+    "solidity.telemetry": false,
+    "redhat.telemetry.enabled": false,
+    "workbench.editor.historyBasedLanguageDetection": true,
+    // @extenstion terminal
+    // @dev Terminal Configuration
+    "terminal.integrated.shellIntegration.enabled": true,
+    "extensions.autoUpdate": "onlyEnabledExtensions",
+    // @dev strip most environment variables from the terminal's environment, except for some important ones
+    // {@link https://code.visualstudio.com/docs/terminal/profiles#_why-are-there-duplicate-paths-in-the-terminals-path-environment-variable-andor-why-are-they-reversed-on-macos}
+    "terminal.integrated.inheritEnv": false,
+    // @dev Map file extensions to an existing language either globally or per workspace.
+    // {@see https://code.visualstudio.com/docs/languages/overview#_can-i-map-additional-file-extensions-to-a-language}
+    "terminal.integrated.shellArgs.osx": [
+        "--noprofile",
+        "--norc"
+    ],
+    //  "terminal.integrated.env.osx": {
+    //    "PATH": "/fake/path:${env:PATH}"
+    //  },
+    // @extenstion languageToolLinter
+    //  "languageToolLinter.external.username": "sam@manifoldfinance.com",
+    //  "languageToolLinter.external.apiKey": "",
+    "languageToolLinter.languageTool.motherTongue": "en-US",
+    "terminal.enableAppInsights": false,
+    "files.eol": "\n",
+    "editor.fontFamily": "JetBrains Mono",
+    "editor.fontLigatures": true,
+    "bracket-pair-colorizer-2.depreciation-notice": false,
+    "cSpell.userWords": [
+        "actions",
+        "alphanum",
+        "astro",
+        "bubblesort",
+        "clsx",
+        "const",
+        "copyof",
+        "crytic",
+        "cssnano",
+        "dodoc",
+        "duckdb",
+        "export",
+        "Exports",
+        "flashbots",
+        "foldfinance",
+        "from",
+        "function",
+        "gitmodules",
+        "glob",
+        "headlessui",
+        "hexa",
+        "iconify",
+        "IDCN",
+        "import",
+        "indx",
+        "javascripts",
+        "keccak",
+        "KHTML",
+        "Lampsort",
+        "linearization",
+        "manifoldfinance",
+        "manifoldx",
+        "mathjax",
+        "mcopy",
+        "meveth",
+        "minisearch",
+        "mkdocs",
+        "mload",
+        "module",
+        "mstore",
+        "multicall",
+        "NATSPEC",
+        "Node",
+        "noop",
+        "Numberish",
+        "object",
+        "pathfile",
+        "permissioned",
+        "pids",
+        "process",
+        "proptest",
+        "pymdownx",
+        "reentrancy",
+        "rehype",
+        "remappings",
+        "reqwest",
+        "return",
+        "roadmap",
+        "securerpc",
+        "shiki",
+        "signextend",
+        "superfences",
+        "tailwindcss",
+        "TTFB",
+        "typeof",
+        "Typesafe",
+        "undercollateralized",
+        "unocss",
+        "Valibot",
+        "Viem",
+        "void",
+        "wagmi",
+        "walletconnect"
+    ],
+    "mdx.experimentalLanguageServer": true,
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        "Cargo.toml": "Cargo.lock",
+        "*.ts": "${capture}.typegen.ts",
+        "*.tsx": "${capture}.typegen.ts",
+        "*.mts": "${capture}.typegen.ts",
+        "*.cts": "${capture}.typegen.ts"
+    },
+    "redhat.telemetry.enabled": false,
+    "yaml.schemas": {
+        "file:///Users/janitor/.vscode/extensions/docsmsft.docs-yaml-1.0.5/dist/toc.schema.json": "/toc\\.yml/i"
+    },
+    "github.copilot.enable": {
+        "quarto": false,
+        "*": false,
+        "markdown": "false",
+        "plaintext": false
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "languageToolLinter.languageTool.disabledRules": "MORFOLOGIK_RULE_CA_ES",
+    "solidity.telemetry": false,
+    "explorer.confirmDelete": false,
+    "editor.inlineSuggest.suppressSuggestions": true,
+    "window.zoomLevel": 1,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "workbench.settings.applyToAllProfiles": [
+        "languageToolLinter.enabled",
+        "versionlens.suggestions.showOnStartup"
+    ],
+    "security.workspace.trust.untrustedFiles": "open",
+    "git.openRepositoryInParentFolders": "never",
+    "go.toolsManagement.autoUpdate": true,
+    "editor.tokenColorCustomizations": {
+        "[*Light*]": {
+            "textMateRules": [
+                {
+                    "scope": "ref.matchtext",
+                    "settings": {
+                        "foreground": "#000"
+                    }
+                }
+            ]
+        },
+        "[*Dark*]": {
+            "textMateRules": [
+                {
+                    "scope": "ref.matchtext",
+                    "settings": {
+                        "foreground": "#fff"
+                    }
+                }
+            ]
+        },
+        "textMateRules": [
+            {
+                "scope": "criticmarkup.addition",
+                "settings": {
+                    "foreground": "#00bb00"
+                }
+            },
+            {
+                "scope": "criticmarkup.deletion",
+                "settings": {
+                    "foreground": "#dd0000"
+                }
+            },
+            {
+                "scope": "criticmarkup.substitution",
+                "settings": {
+                    "foreground": "#ff8600"
+                }
+            },
+            {
+                "scope": "criticmarkup.comment",
+                "settings": {
+                    "foreground": "#0000bb"
+                }
+            },
+            {
+                "scope": "criticmarkup.highlight",
+                "settings": {
+                    "foreground": "#aa53a9"
+                }
+            },
+            {
+                "scope": "keyword.other.dotenv",
+                "settings": {
+                    "foreground": "#FF000000"
+                }
+            },
+            {
+                "scope": "keyword.control.bats",
+                "settings": {
+                    "foreground": "#9f1fd1",
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "support.function.bats",
+                "settings": {
+                    "foreground": "#d41515",
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "scope": "support.variable.bats",
+                "settings": {
+                    "foreground": "#329432",
+                    "fontStyle": "italic"
+                }
+            }
+        ]
+    },
+    "files.associations": {
+        "*.sol": "solidity",
+        "*.t.sol": "solidity",
+        "*.slib": "solidity",
+        "*.json.liquid": "json",
+        "*.yaml.liquid": "yaml",
+        "*.md.liquid": "markdown",
+        "*.js.liquid": "liquid-javascript",
+        "*.css.liquid": "liquid-css",
+        "*.scss.liquid": "liquid-scss",
+        ".env*": "dotenv",
+        "vector": "cpp",
+        "utility": "cpp",
+        "__bit_reference": "cpp",
+        "__config": "cpp",
+        "__debug": "cpp",
+        "__errc": "cpp",
+        "__hash_table": "cpp",
+        "__locale": "cpp",
+        "__mutex_base": "cpp",
+        "__node_handle": "cpp",
+        "__split_buffer": "cpp",
+        "__threading_support": "cpp",
+        "__tree": "cpp",
+        "__verbose_abort": "cpp",
+        "array": "cpp",
+        "atomic": "cpp",
+        "bitset": "cpp",
+        "cctype": "cpp",
+        "charconv": "cpp",
+        "clocale": "cpp",
+        "cmath": "cpp",
+        "complex": "cpp",
+        "cstdarg": "cpp",
+        "cstddef": "cpp",
+        "cstdint": "cpp",
+        "cstdio": "cpp",
+        "cstdlib": "cpp",
+        "cstring": "cpp",
+        "ctime": "cpp",
+        "cwchar": "cpp",
+        "cwctype": "cpp",
+        "deque": "cpp",
+        "exception": "cpp",
+        "fstream": "cpp",
+        "initializer_list": "cpp",
+        "iomanip": "cpp",
+        "ios": "cpp",
+        "iosfwd": "cpp",
+        "iostream": "cpp",
+        "istream": "cpp",
+        "limits": "cpp",
+        "list": "cpp",
+        "locale": "cpp",
+        "map": "cpp",
+        "mutex": "cpp",
+        "new": "cpp",
+        "optional": "cpp",
+        "ostream": "cpp",
+        "queue": "cpp",
+        "ratio": "cpp",
+        "regex": "cpp",
+        "set": "cpp",
+        "sstream": "cpp",
+        "stack": "cpp",
+        "stdexcept": "cpp",
+        "streambuf": "cpp",
+        "string": "cpp",
+        "string_view": "cpp",
+        "system_error": "cpp",
+        "tuple": "cpp",
+        "typeinfo": "cpp",
+        "unordered_map": "cpp",
+        "variant": "cpp",
+        "algorithm": "cpp",
+        "*.html": "tera",
+        ".dapprc": "shellscript",
+        ".gas-snapshot": "julia",
+        "*.hbs": "handlebars"
+    },
+    "C_Cpp.default.compilerPath": "/usr/bin/clang++",
+    "workbench.colorCustomizations": {
+        "inlineChat.background": "#000000",
+        "inlineChatInput.background": "#1F1F1F",
+        "inlineChatInput.focusBorder": "#949E99",
+        "inlineChat.regionHighlight": "#3F3F3F",
+        "editor.lineHighlightBackground": "#1073cf2d",
+        "editor.lineHighlightBorder": "#9fced11f"
+    },
+    "cSpell.customDictionaries": {},
+    "cody.commandCodeLenses": true,
+    // "cody.autocomplete.advanced.provider": "anthropic",
+    "cody.autocomplete.advanced.provider": "experimental-ollama",
+    "cody.autocomplete.experimental.ollamaOptions": {
+        "url": "http://localhost:11434",
+        "model": "deepseek-coder:6.7b-base-q4_K_M"
+    },
+    "cody.autocomplete.languages": {
+        "yaml": false,
+        "plaintext": false,
+        "markdown": false,
+        "*": true
+    },
+    "cody.autocomplete.experimental.hotStreak": true,
+    "cody.autocomplete.experimental.dynamicMultilineCompletions": true,
+    "editor.codeActionsOnSave": {},
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "cody.experimental.localSymbols": true,
+    "biome_lsp.trace.server": "messages",
+    "languageToolLinter.external.apiKey": "pit-SizwKHhTGI8L",
+    "languageToolLinter.external.username": "sam@manifoldfinance.com",
+    "languageToolLinter.external.url": "https://api.languagetoolplus.com/v2/",
+    "languageToolLinter.languageTool.language": "en-GB",
+    "github.copilot.chat.fixTestFailures": true,
+    "languageToolLinter.diagnosticSeverity": "information",
+    "[go]": {
+        "editor.insertSpaces": false,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    },
+    "github.copilot.editor.enableAutoCompletions": true,
+    "firedbg.showWelcome": false,
+    "rust-analyzer.lens.run.enable": false,
+    "rust-analyzer.cargo.sysroot": "discover",
+    "rust-analyzer.diagnostics.disabled": [
+        "unresolved-proc-macro"
+    ],
+    "rust-analyzer.semanticHighlighting.punctuation.enable": true,
+    "editor.bracketPairColorization.enabled": false,
+    "editor.guides.bracketPairs": false,
+    "separators.classes.borderWidth": 0,
+    "separators.constructors.borderWidth": 0,
+    "separators.enums.borderWidth": 0,
+    "separators.interfaces.borderWidth": 0,
+    "separators.namespaces.borderWidth": 0,
+    "separators.structs.borderWidth": 0,
+    "separators.methods.borderWidth": 2,
+    "separators.functions.borderWidth": 2,
+    "separators.functions.borderStyle": "dashed",
+    "separators.methods.borderStyle": "dashed",
+    "separators.location": "belowTheSymbol",
+    "cody.telemetry.level": "off",
+    "yaml.maxItemsComputed": 50000,
+    "task.problemMatchers.neverPrompt": false,
+    "semanticdiff.colorIcon": true,
+    "simbolik.api-key": "ee87dc49-7cca-4dac-8831-66d17f27a30c",
+    "simbolik.show-sourcemaps": true,
+    "Tools-for-Solidity.Wake.installationMethod": "conda",
+    "explorer.confirmDragAndDrop": false,
+    "firedbg.telemetry": false,
+    "linter-actionlint.config": {
+        "capabilities": [],
+        "command": [
+            "actionlint",
+            "-format",
+            "'{{json .}}'",
+            "--stdin-filename",
+            "$file",
+            "-"
+        ],
+        "configFiles": [
+            "actionlint.yaml",
+            "actionlint.yml"
+        ],
+        "enabled": true,
+        "languages": [
+            "yaml"
+        ],
+        "name": "actionlint",
+        "url": "https://github.com/rhysd/actionlint"
+    },
+    "[rust]": {
+        "editor.semanticHighlighting.enabled": true
+    },
+    "chat.commandCenter.enabled": false,
+    "versionlens.suggestions.showOnStartup": true,
+    "workbench.editor.editorActionsLocation": "titleBar",
+    "cody.suggestions.mode": "auto-edit",
+    "[javascript]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
+    "biome.enabled": false,
+    "python.venvFolders": [
+        "Library/Application Support/Code/User/globalStorage/ackeeblockchain.tools-for-solidity"
+    ],
+    "editor.inlayHints.enabled": "off",
+    "editor.wordWrap": "off",
+    "diffEditor.wordWrap": "off",
+    "editor.guides.indentation": false,
+    "vue.server.hybridMode": false,
+    "hediet.vscode-drawio.resizeImages": null,
+    "haskell.ghcupExecutablePath": " /Users/janitor/.ghcup/bin/ghcup",
+    "haskell.manageHLS": "GHCup",
+    "mcp": {
+        "servers": {
+            "repomix": {
+                "command": "npx",
+                "args": [
+                    "-y",
+                    "repomix",
+                    "--mcp"
+                ]
+            }
+        }
+    },
+    "sol-language-server.trace.server": "verbose",
+    "workbench.colorTheme": "Default Dark+",
+    "diffEditor.experimental.showMoves": true,
+    "diffEditor.codeLens": true,
+    "chat.agent.enabled": false,
+    "chat.detectParticipant.enabled": false,
+    "telemetry.feedback.enabled": false,
+    "go.lintOnSave": "off",
+    "go.vetOnSave": "off",
+    "go.inlayHints.constantValues": true,
+    "go.inlayHints.compositeLiteralTypes": true,
+    "go.survey.prompt": false,
+    "go.showWelcome": false,
+    "go.testExplorer.concatenateMessages": false,
+    "gopls": {
+        "ui.semanticTokens": true,
+    },
+    // Controls sorting order of editor history in quick open when filtering.
+    //  - default: History entries are sorted by relevance based on the filter value used. More relevant entries appear first.
+    //  - recency: History entries are sorted by recency. More recently opened entries appear first.
+    "search.quickOpen.history.filterSortOrder": "default",
+    // Configure effect of double-clicking a result in a search editor.
+    //  - selectWord: Double-clicking selects the word under the cursor.
+    //  - goToLocation: Double-clicking opens the result in the active editor group.
+    //  - openLocationToSide: Double-clicking opens the result in the editor group to the side, creating one if it does not yet exist.
+    "search.searchEditor.doubleClickBehaviour": "goToLocation",
+    // @function sortOrder
+    //  @note Controls sorting order of search results.
+    //  @param default: Results are sorted by folder and file names, in alphabetical order.
+    //  @param fileNames: Results are sorted by file names ignoring folder order, in alphabetical order.
+    //  @param type: Results are sorted by file extensions, in alphabetical order.
+    //  @param modified: Results are sorted by file last modified date, in descending order.
+    //  @param countDescending: Results are sorted by count per file, in descending order.
+    //  @param countAscending: Results are sorted by count per file, in ascending order.
+    "search.sortOrder": "modified",
+    "editor.cursorStyle": "block",
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        "*.ts": "${capture}.js, ${capture}.typegen.ts, ${capture}.typegen.ts",
+        "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+        "*.jsx": "${capture}.js",
+        "*.tsx": "${capture}.ts, ${capture}.typegen.ts, ${capture}.typegen.ts",
+        "tsconfig.json": "tsconfig.*.json",
+        "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml",
+        "*.mts": "${capture}.typegen.ts, ${capture}.typegen.ts",
+        "*.cts": "${capture}.typegen.ts, ${capture}.typegen.ts",
+    },
+    // Controls the font size in pixels for CodeLens. When set to 0, 90% of `editor.fontSize` is used.
+    "editor.codeLensFontSize": 0,
+    "editor.codeLensFontFamily": "Hack",
+    "editor.inlayHints.fontFamily": "'SF Mono Regular', monospace;",
+    "editor.suggestSelection": "first",
+    // Controls whether to preview the suggestion outcome in the editor.
+    "editor.suggest.preview": false,
+    // @class IntelliSense
+    //   @note Controls whether a suggestion is selected when the widget shows.
+    //  @param always: Always select a suggestion when automatically triggering IntelliSense.
+    //  @param never: Never select a suggestion when automatically triggering IntelliSense.
+    //  @param whenTriggerCharacter: Select a suggestion only when triggering IntelliSense from a trigger character.
+    //  @param whenQuickSuggestion: Select a suggestion only when triggering IntelliSense as you type.
+    "editor.suggest.selectionMode": "always",
+    // Controls whether remembered suggestion selections are shared between multiple workspaces and windows (needs `editor.suggestSelection`).
+    "editor.suggest.shareSuggestSelections": false,
+    // When enabled IntelliSense shows `class`-suggestions.
+    "editor.suggest.showClasses": true,
+    // When enabled IntelliSense shows `color`-suggestions.
+    "editor.suggest.showColors": true,
+    // When enabled IntelliSense shows `constant`-suggestions.
+    "editor.suggest.showConstants": true,
+    // When enabled IntelliSense shows `constructor`-suggestions.
+    "editor.suggest.showConstructors": true,
+    // When enabled IntelliSense shows `customcolor`-suggestions.
+    "editor.suggest.showCustomcolors": true,
+    // When enabled IntelliSense shows `deprecated`-suggestions.
+    "editor.suggest.showDeprecated": true,
+    // When enabled IntelliSense shows `enumMember`-suggestions.
+    "editor.suggest.showEnumMembers": true,
+    // When enabled IntelliSense shows `enum`-suggestions.
+    "editor.suggest.showEnums": true,
+    // When enabled IntelliSense shows `event`-suggestions.
+    "editor.suggest.showEvents": true,
+    // When enabled IntelliSense shows `field`-suggestions.
+    "editor.suggest.showFields": true,
+    // When enabled IntelliSense shows `file`-suggestions.
+    "editor.suggest.showFiles": true,
+    "editor.letterSpacing": 0.55,
+    "editor.lineHeight": 18,
+    "window.menuBarVisibility": "compact",
+    "editor.fontSize": 14,
+    "editor.definitionLinkOpensInPeek": true,
+    "workbench.editor.untitled.hint": "hidden",
+    "editor.formatOnSave": false,
+    // Workbench.
+    "workbench.activityBar.visible": true,
+    "workbench.colorCustomizations": {
+        "editorBracketHighlight.foreground1": "#ea4aaa",
+        "editorBracketHighlight.foreground2": "#28a745",
+        "editorBracketHighlight.foreground3": "#6f42c1",
+        "editorBracketHighlight.foreground4": "#ea4aaa",
+        "editorBracketHighlight.foreground5": "#28a745",
+        "editorBracketHighlight.foreground6": "#6f42c1",
+        "[GitHub Light Default]": {
+            "editorBracketHighlight.foreground1": "#ea4aaa",
+            "editorBracketHighlight.foreground2": "#28a745",
+            "editorBracketHighlight.foreground3": "#6f42c1",
+            "editorBracketHighlight.foreground4": "#ea4aaa",
+            "editorBracketHighlight.foreground5": "#28a745",
+            "editorBracketHighlight.foreground6": "#6f42c1",
+        },
+        "[Nord]": {
+            "editorBracketHighlight.foreground1": "#EBCB8B",
+            "editorBracketHighlight.foreground2": "#D08770",
+            "editorBracketHighlight.foreground3": "#B48EAD",
+            "editorBracketHighlight.foreground4": "#EBCB8B",
+            "editorBracketHighlight.foreground5": "#D08770",
+            "editorBracketHighlight.foreground6": "#B48EAD",
+        },
+        "editor.lineHighlightBackground": "#1073cf2d",
+        "editor.lineHighlightBorder": "#9fced11f",
+    },
+    "workbench.editor.closeOnFileDelete": true,
+    "workbench.editor.decorations.badges": true,
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editor.labelFormat": "medium",
+    "workbench.editor.limit.value": 30,
+    "workbench.editor.sharedViewState": true,
+    "workbench.editor.untitled.experimentalLanguageDetection": true,
+    "workbench.list.multiSelectModifier": "alt",
+    "workbench.list.openMode": "doubleClick",
+    "workbench.statusBar.visible": true,
+    "workbench.tree.indent": 16,
+    "gitlens.defaultDateLocale": "system",
+    "bashIde.highlightParsingErrors": true,
+    // colorizer2 has better coverage than the inbuilt version
+    "bracket-pair-colorizer-2.depreciation-notice": false,
+    "workbench.startupEditor": "none",
+    "[python]": {
+        "editor.formatOnType": true,
+    },
+    "json.maxItemsComputed": 10000,
+    "explorer.confirmDelete": false,
+    "debug.showInStatusBar": "always",
+    "hardhat-language-server.trace.server.verbosity": "verbose",
+    // Configure settings to be overridden for the search-result language.
+    "[search-result]": {
+        "editor.lineNumbers": "off",
+    },
+    // Configure settings to be overridden for the shellscript language.
+    "[shellscript]": {
+        "files.eol": "\n",
+    },
+    // Configure settings to be overridden for the yaml language.
+    "[yaml]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "diffEditor.ignoreTrimWhitespace": false,
+    },
+    // Typescript
+    "typescript.suggest.completeFunctionCalls": true,
+    "typescript.tsserver.experimental.enableProjectDiagnostics": false,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "[typescript]": {
+        "outline.showArrays": true,
+        "outline.showFunctions": true,
+        "breadcrumbs.showTypeParameters": true,
+        "editor.gotoLocation.alternativeTypeDefinitionCommand": "editor.action.peekTypeDefinition",
+        "outline.showInterfaces": true,
+    },
+    "typescript.suggest.paths": true,
+    // Enable/disable suggestion diagnostics for TypeScript files in the editor.
+    "typescript.suggestionActions.enabled": true,
+    "editor.renderWhitespace": "boundary",
+    "editor.bracketPairs": "active",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+}
